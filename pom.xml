@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>EventSource</artifactId>
-    <version>0.0.9-SNAPSHOT</version>
+    <version>0.0.9</version>
     <name>EventSource</name>
     <description>WebJar for EventSource</description>
     <url>http://webjars.org</url>
@@ -33,7 +33,7 @@
         <developer>
             <id>metaman</id>
             <name>Martin MacPherson</name>
-            <email></email>
+            <email />
         </developer>
     </developers>
 
@@ -49,7 +49,7 @@
         <url>http://github.com/webjars/EventSource</url>
         <connection>scm:git:https://github.com/webjars/EventSource.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/EventSource.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>EventSource-0.0.9</tag>
     </scm>
     
     <build>
@@ -78,13 +78,13 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="download archive"/>
-                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip"/>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="download archive" />
+                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip" />
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/${project.artifactId}-${version.unsnapshot}" includes="eventsource.js,eventsource.min.js"/>
+                                    <fileset dir="${project.build.directory}/${project.artifactId}-${version.unsnapshot}" includes="eventsource.js,eventsource.min.js" />
                                 </move>
                             </target>
                         </configuration>
